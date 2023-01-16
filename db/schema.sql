@@ -8,7 +8,7 @@ CREATE TABLE users(
     password TEXT
 );
 
-INSERT INTO users
+INSERT INTO users(name, email, password)
 VALUES
 ('mark', 'mark@gmail.com', 'helloworld');
 
@@ -24,7 +24,7 @@ CREATE TABLE characters(
     image TEXT
 );
 
-INSERT INTO characters
+INSERT INTO characters(char_name, gender, age, level, user_id, health, image)
 VALUES 
 ('Shovel Knight', 'male', 13, 'bronze', 10, '1', 10, 'https://toppng.com//public/uploads/preview/shovel-knight-shovel-knight-pixel-sprite-11562995378oifwzdxehc.png' );
 
@@ -38,7 +38,7 @@ CREATE TABLE monsters(
     image TEXT
 );
 
-INSERT INTO monsters
+INSERT INTO monsters(mon_name, difficulty, drops, health, image)
 VALUES
 ('Golem', 'Gold', 'Silver Sword', 15, 'https://art.pixilart.com/thumb/5b83fa17af18340.png');
 
@@ -50,6 +50,6 @@ CREATE TABLE events(
     effect TEXT,  
 )
 
-INSERT INTO events
+INSERT INTO events(event, quote, effect)
 VALUES 
 ('recieve food', 'You come across an orchard lush with Apples. A moment''s respite in an otherwise treacherous world. Savour it for moments like this do not last', 'Restore health by 50%');
