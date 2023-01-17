@@ -9,8 +9,7 @@ const sessions = require('./middlewares/sessions');
 const usersController = require('./controllers/users_controller');
 const sessionsController = require('./controllers/sessions_controller');
 const charactersController = require('./controllers/characters_controller');
-const eventsController = require('./controllers/events_controller')
-
+const eventsController = require('./controllers/events_controller');
 
 // Start up the APP
 const app = express();
