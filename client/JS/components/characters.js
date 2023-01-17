@@ -16,6 +16,7 @@ function renderCharacters() {
                 <div class="characters-list">
                     ${renderCharacter()}
                 </div>
+                <button onClick="renderCharacterCreation()">Create a new Character? </button>
             `;
         });
 }
@@ -23,7 +24,7 @@ function renderCharacters() {
 function renderCharacter() {
     return state.characters.map(character => {
         return `
-            <div class="character">
+            <div class="character" data-id='${character.id}'>
                 <div class="character-image">
                     <img onClick="renderFight()" src="${character.image}" alt="">
                     <p>Name: ${character.char_name}</p>
@@ -32,7 +33,24 @@ function renderCharacter() {
                     <p>Health: ${character.health}</p>
                     <p>Level: ${character.level}</p>
                 </div>
+                <button onClick="deleteCharacter(event)">Delete Character?</button>
+                
             </div>
         `;
     }).join('');
+}
+
+function deleteCharacter(event) {
+    const delCharButton = event.target
+    const CharDOM = delCharButton.closest('.character')
+
+    const characterId = CharDOM.dataset.id
+
+    fetch(`/api/characters/${characterId}`, {
+        method: 'DELETE'
+    })
+    .then(() => {
+        state.characters = state.characters.filter(character => character.id != characterId)
+        renderCharacters()
+    })
 }
