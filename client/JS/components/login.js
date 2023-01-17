@@ -41,7 +41,8 @@ function login(event) {
                 renderLogin();
                 renderError(res.error);
             } else {
-                state.loggedInUserName = res;
+                state.loggedInUserName = res.email;
+                state.userId = res.id;
                 renderCharacterCreation();
             }
         });

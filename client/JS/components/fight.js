@@ -58,6 +58,6 @@ function renderMonsterWins() {
     `;
 }
 
-module.exports = renderFight;
+// module.exports = renderFight;
 
 // randomized person winning bug

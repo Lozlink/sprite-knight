@@ -6,19 +6,24 @@ const Character = {
 
         return db.query(sql).then((dbRes) => dbRes.rows);
     },
-    create: (char_name, gender, age, image) => {
+    create: (char_name, gender, age, level, userId, health, image) => {
         const sql = `
-        INSERT INTO characters(char_name, gender, age, level, health, image)
-        VALUES($1, $2, $3, $4, $5, $6)
-        RETURNING *
+            INSERT INTO characters(char_name, gender, age, level, user_id, health, image)
+            VALUES($1, $2, $3, $4, $5, $6, $7)
+            RETURNING *
         `;
-        const level = 1
-        const health = 100
-        
 
         return db
-            .query(sql, [char_name, gender, age, level, health, image])
+            .query(sql, [char_name, gender, age, level, userId, health, image])
             .then((dbRes) => dbRes.rows[0]);
+    },
+
+    getUserFromEmail: userEmail => {
+        const sql = 'SELECT * FROM users WHERE email = $1';
+
+        return db
+            .query(sql, [userEmail])
+            .then(dbRes => dbRes.rows[0]);
     },
 
     delete: (characterId) => {

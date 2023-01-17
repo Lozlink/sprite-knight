@@ -35,13 +35,11 @@ function submitCharacter(event) {
     event.preventDefault();
     const form = event.target;
     let data = Object.fromEntries(new FormData(form));
-   console.log(data)
 
     data.level = 1;
     data.image = "https://i.imgur.com/fuMSF07.jpg";
-    //data.userID = null; //access userID from cookie??
     data.health = 100;
-    
+    data.userId = state.userId;
 
     // Need to add code to add data to db
 
@@ -52,7 +50,6 @@ function submitCharacter(event) {
     })
         .then(res => res.json())
         .then(character => {
-            console.log(character)
             state.characters.push(character);
             renderFight()
         });
