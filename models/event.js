@@ -1,11 +1,11 @@
 const db = require("../db/db");
 
 const Event = {
-    allEvents: () => {
-        const sql = `SELECT * FROM events;`;
+    randEvent: () => {
+        const sql = `SELECT * FROM events ORDER BY RANDOM() LIMIT 1;`;
 
-        return db.query(sql).then((dbRes) => dbRes.rows);
-    },
+        return db.query(sql).then((dbRes) => dbRes.rows[0]);
+    }
 };
 
 module.exports = Event;
