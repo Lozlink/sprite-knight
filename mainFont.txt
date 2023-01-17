@@ -1,0 +1,30 @@
+https://fonts.google.com/specimen/VT323?query=VT323
+
+Recommended font sizes:
+-----------------------
+Heading: 48px
+Subheading: 32px
+Plain text: 21px
+-----------------------
+
+Use on the web:
+
+To embed a font, copy the code into the <head> of your html
+
+ON LINK OPTION:
+inside <head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+inside CSS
+font-family: 'VT323', monospace;
+
+ON IMPORT OPTION:
+inside <head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+</style>
+ 
+inside CSS
+font-family: 'VT323', monospace;
