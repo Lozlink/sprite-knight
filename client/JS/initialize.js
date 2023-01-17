@@ -10,5 +10,7 @@ fetch('/api/sessions')
         if (user) {
             state.loggedInUserName = user.email;
             state.userId = user.id;
+            
+            renderCharacters();
         }
     });
