@@ -1,10 +1,10 @@
 const db = require("../db/db");
 
 const Character = {
-    findAll: () => {
-        const sql = "SELECT * FROM characters;";
+    findUserCharacters: (userId) => {
+        const sql = "SELECT * FROM characters WHERE user_id = $1";
 
-        return db.query(sql).then((dbRes) => dbRes.rows);
+        return db.query(sql, [userId]).then((dbRes) => dbRes.rows);
     },
     create: (char_name, gender, age, level, userId, health, image) => {
         const sql = `

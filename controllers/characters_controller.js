@@ -6,8 +6,12 @@ const Character = require("../models/character");
 
 // Routes
 
-router.get("/", (req, res) => {
-    Character.findAll().then((character) => res.json(character));
+router.get("/:id", (req, res) => {
+    const userId = req.params.id;
+    console.log(`userId: ${userId}`)
+    Character
+        .findUserCharacters(userId)
+        .then((characters) => res.json(characters));
 });
 
 router.post("/", (req, res) => {

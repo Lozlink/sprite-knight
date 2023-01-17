@@ -43,7 +43,17 @@ function login(event) {
             } else {
                 state.loggedInUserName = res.email;
                 state.userId = res.id;
-                renderCharacterCreation();
+
+                getCharacters().then(() => {
+                    // If the user has at least one character, show their characters.
+                    if (state.characters.length > 0) {
+                        renderCharacters();
+    
+                    // Otherwise, show the character creation page.
+                    } else {
+                        renderCharacterCreation();
+                    }
+                });
             }
         });
 }
