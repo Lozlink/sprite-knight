@@ -43,6 +43,11 @@ function signUp(event) {
         .then(user => {
             state.loggedInUserName = user.email;
             state.userId = user.id;
+
+            // Remove the sign-up and login buttons
+            document.querySelector('.sign-up').remove();
+            document.querySelector('.login').remove();
+            
             renderCharacterCreation();
         });
 }

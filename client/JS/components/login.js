@@ -44,6 +44,10 @@ function login(event) {
                 state.loggedInUserName = res.email;
                 state.userId = res.id;
 
+                // Remove the sign-up and login buttons
+                document.querySelector('.sign-up').remove();
+                document.querySelector('.login').remove();
+
                 getCharacters().then(() => {
                     // If the user has at least one character, show their characters.
                     if (state.characters.length > 0) {
