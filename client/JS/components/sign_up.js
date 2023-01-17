@@ -5,12 +5,8 @@ function renderSignUp() {
       <form onSubmit="signUp(event)">
         <h2>Sign Up:</h2>
         <fieldset>
-          <label for="">Full Name: </label>
-          <input type="text" name="fullName">
-        </fieldset>
-        <fieldset>
-          <label for="">Username: </label>
-          <input type="text" name="userName">
+          <label for="">Name: </label>
+          <input type="text" name="name">
         </fieldset>
         <fieldset>
           <label for="">Email: </label>
