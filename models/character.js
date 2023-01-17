@@ -2,19 +2,22 @@ const db = require("../db/db");
 
 const Character = {
     findAll: () => {
-        const sql = "SELECT * FROM treasures";
+        const sql = "SELECT * FROM characters;";
 
         return db.query(sql).then((dbRes) => dbRes.rows);
     },
-    create: (name, gender, age, level, user_id, health, image) => {
+    create: (char_name, gender, age, image) => {
         const sql = `
-        INSERT INTO characters(name, gender, age, level, user_id, health, image)
-        VALUES($1, $2, $3, $4, $5, $6, $7)
+        INSERT INTO characters(char_name, gender, age, level, health, image)
+        VALUES($1, $2, $3, $4, $5, $6)
         RETURNING *
         `;
+        const level = 1
+        const health = 100
+        
 
         return db
-            .query(sql, [name, gender, age, level, user_id, health, image])
+            .query(sql, [char_name, gender, age, level, health, image])
             .then((dbRes) => dbRes.rows[0]);
     },
 
