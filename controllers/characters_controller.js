@@ -6,10 +6,15 @@ const Character = require("../models/character");
 
 // Routes
 
-router.post("/", (req, res) => {
-    const { name, gender, age, level, user_id, health, image } = req.body;
+router.get("/", (req, res) => {
+    Character.findAll().then((character) => res.json(character));
+});
 
-    Character.create(name, gender, age, level, user_id, health, image).then(
+
+router.post("/", (req, res) => {
+    const { char_name, gender, age } = req.body;
+
+    Character.create(char_name, gender, age).then(
         (character) => res.json(character)
     );
 });

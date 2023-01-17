@@ -1,5 +1,6 @@
 const state = {
-    loggedInUserName: null
+    loggedInUserName: null,
+    characters: []
 };  
   
 fetch('/api/sessions')

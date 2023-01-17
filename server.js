@@ -33,4 +33,4 @@ app.use(sessions);
 //--------| Middleware for Controllers with Routes|--------\\
 app.use('/api/users', usersController);
 app.use('/api/sessions', sessionsController);
-app.use('/api/characters_controller', charactersController);
+app.use('/api/characters', charactersController);
