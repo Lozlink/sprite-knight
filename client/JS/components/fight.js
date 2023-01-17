@@ -1,10 +1,9 @@
 function rollDice() {
-    return 1 + Math.floor(Math.random() * 6)
- }
+    return 1 + Math.floor(Math.random() * 6);
+}
 
-
-function renderFight() {
-    document.querySelector('#page').innerHTML = ` 
+const renderFight = () => {
+    document.querySelector("#page").innerHTML = ` 
     <div class="fight-box">
         <div class="player-character">
             <img src='#' alt="">
@@ -18,20 +17,19 @@ function renderFight() {
 
     </div>
     `;
-}
+};
 
 function diceRoll() {
-    console.log(rollDice())
+    console.log(rollDice());
     if (rollDice() > 3) {
-        return renderPlayerWins()
+        return renderPlayerWins();
     } else {
-        return renderMonsterWins()
+        return renderMonsterWins();
     }
-
 }
 
 function renderPlayerWins() {
-    document.querySelector('#page').innerHTML = ` 
+    document.querySelector("#page").innerHTML = ` 
     <div class="fight-box">
         <div class="player-character">
             <img src='#' alt="">
@@ -46,7 +44,7 @@ function renderPlayerWins() {
 }
 
 function renderMonsterWins() {
-    document.querySelector('#page').innerHTML = ` 
+    document.querySelector("#page").innerHTML = ` 
     <div class="fight-box">
         <div class="monster">
             <img src='#' alt="">
@@ -60,4 +58,6 @@ function renderMonsterWins() {
     `;
 }
 
-// randomized person winning bug 
+module.exports = renderFight;
+
+// randomized person winning bug
