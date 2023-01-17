@@ -20,13 +20,24 @@ function exploreEvent() {
     fetch('/api/events')
         .then(res => res.json())
         .then(randEvent => {
-            if (randEvent.event === "fight monster") {
-                renderFight();
-            } else {
+            if (randEvent.event != "fight monster") {
                 document.querySelector('#page').innerHTML = `
                     <h2>${randEvent.event}</h2>
-                `;
+                    <img src=${randEvent.image}> 
+                    <p>${randEvent.quote}</p>
+                `
+            } else {
+                renderFight();
             }
-        });
-}
-exploreEvent();
+        })
+    }
+        //}         document.querySelector('#page').innerHTML = `
+        //             <h2>${randEvent.event}</h2>
+        //             <img src=${randEvent.image}> 
+        //             <p>${randEvent.quote}</p>
+                
+
+        //     }
+        // });
+
+// exploreEvent();

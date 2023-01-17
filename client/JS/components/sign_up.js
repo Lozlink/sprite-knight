@@ -40,6 +40,9 @@ function signUp(event) {
     })
         // Convert the response into JSON. This will be the username that was just signed up.
         .then(res => res.json())
-        .then(userName => state.loggedInUserName = userName)
-        .then(() => renderCharacterCreation());
+        .then(user => {
+            state.loggedInUserName = user.email;
+            state.userId = user.id;
+            renderCharacterCreation();
+        });
 }

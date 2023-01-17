@@ -10,13 +10,12 @@ router.get("/", (req, res) => {
     Character.findAll().then((character) => res.json(character));
 });
 
-
 router.post("/", (req, res) => {
-    const { char_name, gender, age } = req.body;
+    const { char_name, gender, age, level, userId, health, image } = req.body;
 
-    Character.create(char_name, gender, age).then(
-        (character) => res.json(character)
-    );
+    Character
+        .create(char_name, gender, age, level, userId, health, image)
+        .then(character => res.json(character));
 });
 
 router.delete("/:id", (req, res) => {
