@@ -9,6 +9,7 @@ const sessions = require('./middlewares/sessions');
 const usersController = require('./controllers/users_controller');
 const sessionsController = require('./controllers/sessions_controller');
 const charactersController = require('./controllers/characters_controller');
+const eventsController = require('./controllers/events_controller')
 
 
 // Start up the APP
@@ -34,3 +35,4 @@ app.use(sessions);
 app.use('/api/users', usersController);
 app.use('/api/sessions', sessionsController);
 app.use('/api/characters', charactersController);
+app.use('/api/events', eventsController);
