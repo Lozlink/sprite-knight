@@ -40,14 +40,19 @@ function signUp(event) {
     })
         // Convert the response into JSON. This will be the username that was just signed up.
         .then(res => res.json())
-        .then(user => {
-            state.loggedInUserName = user.email;
-            state.userId = user.id;
-
-            // Remove the sign-up and login buttons
-            document.querySelector('.sign-up').remove();
-            document.querySelector('.login').remove();
-            
-            renderCharacterCreation();
+        .then(res => {
+            if (res.error) {
+                renderSignUp();
+                renderError(res.error);
+            } else {
+                state.loggedInUserName = res.email;
+                state.userId = res.id;
+    
+                // Remove the sign-up and login buttons
+                document.querySelector('.sign-up').remove();
+                document.querySelector('.login').remove();
+                
+                renderCharacterCreation();
+            }
         });
 }
