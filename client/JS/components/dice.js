@@ -3,3 +3,5 @@ function rollDice() {
 }
 
 console.log(rollDice())
+
+module.exports = rollDice

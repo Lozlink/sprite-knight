@@ -23,7 +23,7 @@ function renderCharacterCreation() {
         <button>Create Character</button>
     </form>
         <div class = "character-image">
-            <img src="" alt="">
+            <img src="characters.image" alt="">
         </div>
     </div>
         

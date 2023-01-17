@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sprite Knight</title>
     <!-- Link CSS here: -->
-    <link rel="stylesheet" href="/CSS/landing_page.css">
+    <link rel="stylesheet" href="./CSS/landing_page.css">
+    <link rel="stylesheet" href="./CSS/fight.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
     </style>
@@ -15,18 +16,20 @@
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/navigation.css">
-  <link rel="stylesheet" href="/css/treasure.css">
+  CSS -->
+  <link rel="stylesheet" href="./CSS/fight.css">
+  <link rel="stylesheet" href="./CSS/landing_page.css">
+
 
   <!-- our functions -->
-  <script src="/js/initialize.js"></script>
+  <script src="./JS/initialize.js"></script>
   
    <!-- our components -->
-  <script defer src="/js/components/character_creator.js"></script>
-  <script defer src="/js/components/sign_up.js"></script>
-  <script defer src="/js/components/login.js"></script>
+  <script defer src="./JS/components/character_creator.js"></script>
+  <script defer src="./JS/components/sign_up.js"></script>
+  <script defer src="./JS/components/login.js"></script>
+  <script defer src='./JS/components/fight.js'></script>
+  
 </head>
 
 <body>
@@ -36,6 +39,7 @@
       <!-- onClick is another in-line event-->
       <li class='sign-up' onClick="renderSignUp()">person_add</li>
       <li class='login' onClick="renderLogin()">login</li>
+      <li onClick="renderFight()">Fight</li>
     </ul>
   </nav>
 
@@ -43,3 +47,4 @@
 </body>
 
 </html>
+

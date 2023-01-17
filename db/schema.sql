@@ -49,7 +49,7 @@ VALUES
 ('Zombie', 'silver', 'Silver Helmet', 60,'https://i.imgur.com/OCDcOILl.jpg'),
 ('Goblin', 'bronze', 'Bronze Armor', 40, 'https://i.imgur.com/SGhSUQul.jpg'),
 ('Ogre', 'gold', 'Gold Armor', 80, 'https://i.imgur.com/axmt54pl.jpg'),
-('Wyvern Knight', 'gold' 'Gold Helmet', 90, 'https://i.imgur.com/mAWLmhMl.jpg'),
+('Wyvern Knight', 'gold', 'Gold Helmet', 90, 'https://i.imgur.com/mAWLmhMl.jpg'),
 ('Troll', 'silver', 'Silver Armor', 60, 'https://i.imgur.com/RzfkTPul.jpg');
 
 
