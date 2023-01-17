@@ -13,12 +13,14 @@ router.post('/', (req, res) => {
         .findByEmail(email)
         .then(user => {
             if (email === '' || password === '') {
-                res.status(400).json({ error: 'email and/or password cannot be blank'});
+                res.status(400).json({ error: 'Email and/or password cannot be blank.'});
             } else {
                 const isValidPassword = bcrypt.compareSync(password, user.password);
                 if (user && isValidPassword) {
                     req.session.userId = user.id;
                     res.json(user);
+                } else {
+                    res.status(400).json({ error: 'Incorrect login details. Check email and/or password.'});
                 }
             }
         });
