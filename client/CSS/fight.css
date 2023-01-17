@@ -1,0 +1,10 @@
+.dice img {
+    width: 100px;
+    height: 100px;
+}
+
+.fight-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
