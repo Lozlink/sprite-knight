@@ -18,6 +18,14 @@ function renderCharacters() {
                 </div>
                 <button onClick="renderCharacterCreation()">Create a new Character? </button>
             `;
+
+            // Remove the sign-up and login buttons
+            if (document.querySelector('.sign-up')) {
+                document.querySelector('.sign-up').remove();
+            }
+            if (document.querySelector('.login')) {
+                document.querySelector('.login').remove();
+            }
         });
 }
 
