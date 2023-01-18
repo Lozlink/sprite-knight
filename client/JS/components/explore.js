@@ -1,12 +1,14 @@
 function renderExplore() {
     // roll to decide following event
     document.querySelector("body").style.backgroundImage =
-        "url('https://i.imgur.com/sFGnGzF.jpg')";
+        "url('')";
 
-    document.querySelector("#page").innerHTML = `
+        
+    const loadingMenu = document.querySelector("#page").innerHTML = `
         <button onClick="renderFight()"> Fight </button>
         <button onClick="exploreEvent()"> Explore </button>
     `;
+    setTimeout(loadingMenu, 5000) 
 }
 
 function exploreEvent() {
