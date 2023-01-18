@@ -11,8 +11,11 @@ fetch('/api/sessions')
         if (user) {
             state.loggedInUserName = user.email;
             state.userId = user.id;
-            
+
             renderCharacters();
         }
+        
+        // Display the correct nav bar depending on if the user has successfully logged in or not.
+        renderNav();
     });
 

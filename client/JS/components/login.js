@@ -43,10 +43,9 @@ function login(event) {
             } else {
                 state.loggedInUserName = res.email;
                 state.userId = res.id;
-
-                // Remove the sign-up and login buttons
-                document.querySelector('.sign-up').remove();
-                document.querySelector('.login').remove();
+                
+                // Update nav bar to remove Sign Up and Login since the user is now logged in.
+                renderNav();
 
                 getCharacters().then(() => {
                     // If the user has at least one character, show their characters.
