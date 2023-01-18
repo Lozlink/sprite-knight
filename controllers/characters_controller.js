@@ -30,4 +30,12 @@ router.delete("/:id", (req, res) => {
     );
 });
 
+router.put('/:id', (req, res) => {
+    const characterId = req.params.id;
+    
+    Character.levelUp(characterId).then(character => res.json(character))
+
+})
+
+
 module.exports = router;

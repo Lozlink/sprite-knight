@@ -25,7 +25,11 @@ li a:hover {
 body {
     background-image: url("/images/LP_FusedBackground.png");
     background-repeat: no-repeat;
-    background-size: 1010px;
+    /* background-size: 1010px; */
+}
+
+body img {
+    object-fit:fill;
 }
 
 .logo {

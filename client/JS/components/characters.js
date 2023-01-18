@@ -59,6 +59,7 @@ function renderFightCharacter() {
                     <img o src="${character.image}" alt="">
                     <p>Name: ${character.char_name}</p>
                     <p>Health: ${character.health}</p>
+                    <p>Level: ${character.level}</p>
                 </div>
             </div>
         `;
