@@ -18,7 +18,7 @@ CREATE TABLE characters(
     char_name TEXT,
     gender TEXT,
     age INTEGER,
-    level TEXT,
+    level INTEGER,
     user_id TEXT,
     health INTEGER,
     image TEXT
@@ -26,8 +26,8 @@ CREATE TABLE characters(
 
 INSERT INTO characters(char_name, gender, age, level, user_id, health, image)
 VALUES 
-('generic male', 'male', 13, 'bronze', '1', 100, 'https://i.imgur.com/fuMSF07l.jpg' ),
-('generic female', 'female', 13, 'bronze', '1', 100, 'https://i.imgur.com/CU8PkWAl.jpg');
+('generic male', 'male', 13, 1, '1', 100, 'https://i.imgur.com/fuMSF07l.jpg' ),
+('generic female', 'female', 13, 1, '1', 100, 'https://i.imgur.com/CU8PkWAl.jpg');
 
 
 CREATE TABLE monsters(
@@ -69,3 +69,6 @@ VALUES
 ('lose health', 'A sharp wooden spike penetrates your feet. You jump back in surprised, only to step back on another. Truly the luck of a champion', 'lose 30% health', 'https://i.imgur.com/aekVz8Xl.jpg'),
 ('rest stop', 'An idyllic view that a champion like yourself should not be privy to seeing. A moment to recover and reflect  on the journey; past, present and future', 'recover full health', 'https://i.imgur.com/sFGnGzFl.jpg'),
 ('fight monster', 'You come across a meadow with Sun rays shining through the trees. Flowers bloom on the plants around you, and birds chirp nested on the trees. Suddenly, you feel a sharp tug and a growl.', 'Fight Monster', 'https://i.imgur.com/VPHrOcR.jpg');
+
+
+-- CHANGE LEVEL TO INTEGER IN FIN

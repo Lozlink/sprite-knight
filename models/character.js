@@ -27,10 +27,19 @@ const Character = {
     },
 
     delete: (characterId) => {
-        const sql = "DELETE FROM characters WHERE id = $1";
+        const sql = 'DELETE FROM characters WHERE id = $1';
 
         return db.query(sql, [characterId]);
     },
+
+    levelUp: (characterId) => {
+        const sql = 'UPDATE characters SET level = level + 1 WHERE id = $1'
+
+        return db.query(sql, [characterId])
+        .then(dbRes => dbRes.rows[0])
+    }
 };
+
+
 
 module.exports = Character;

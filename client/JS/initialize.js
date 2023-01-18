@@ -1,7 +1,8 @@
 const state = {
     loggedInUserName: null,
     userId: null,
-    characters: []
+    characters: [],
+    selectedCharacters: []
 };  
   
 fetch('/api/sessions')
@@ -14,3 +15,4 @@ fetch('/api/sessions')
             renderCharacters();
         }
     });
+

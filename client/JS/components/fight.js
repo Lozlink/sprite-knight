@@ -8,8 +8,6 @@ const renderFight = () => {
         <div class="player-character">
             ${renderFightCharacter()}
         </div>
-        <button onClick="renderFight()"> Fight </button>
-        <button onClick="exploreEvent()"> Explore </button>
         <div class="dice">
             <img src="https://i.imgur.com/9j6T4H5.png" onClick=diceRoll() alt="">
         </div>
@@ -24,11 +22,25 @@ const renderFight = () => {
 function diceRoll() {
     console.log(rollDice());
     if (rollDice() > 3) {
-        return renderPlayerWins();
+        console.log(state.characters)
+        console.log(state.id)
+         fetch(`/api/characters/${state.characters[0].id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            // body: JSON.stringify()
+        })
+        .then(()=> {
+            state.characters[0].level += 1
+            renderPlayerWins();
+        })
+        
     } else {
         return renderMonsterWins();
     }
 }
+
 
 function renderPlayerWins() {
     document.querySelector("#page").innerHTML = ` 
@@ -38,7 +50,8 @@ function renderPlayerWins() {
         </div>
         <div class="continue">
         <h1>Player wins!</h1>
-        <button>Continue</button>
+        <button onClick="renderFight()"> Fight Again </button>
+        <button onClick="exploreEvent()"> Explore </button>
         </div>
 
     </div>
@@ -53,7 +66,8 @@ function renderMonsterWins() {
         </div>
         <div class="continue">
         <h1> Monster wins!</h1>
-        <button>Continue</button>
+        <button onClick="renderFight()"> Fight Again</button>
+        <button onClick="exploreEvent()"> Explore </button>
         </div>
 
     </div>

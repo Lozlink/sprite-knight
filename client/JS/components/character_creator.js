@@ -51,6 +51,6 @@ function submitCharacter(event) {
         .then(res => res.json())
         .then(character => {
             state.characters.push(character);
-            renderFight()
+            renderExplore()
         });
 }
