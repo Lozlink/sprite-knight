@@ -65,3 +65,18 @@ function renderFightCharacter() {
         })
         .join("");
 }
+
+function deleteCharacter(event) {
+    const delCharButton = event.target
+    const CharDOM = delCharButton.closest('.character')
+
+    const characterId = CharDOM.dataset.id
+
+    fetch(`/api/characters/${characterId}`, {
+        method: 'DELETE'
+    })
+    .then(() => {
+        state.characters = state.characters.filter(character => character.id != characterId)
+        renderCharacters()
+    })
+}
