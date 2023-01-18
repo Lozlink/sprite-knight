@@ -8,6 +8,8 @@ const renderFight = () => {
         <div class="player-character">
             ${renderFightCharacter()}
         </div>
+        <button onClick="renderFight()"> Fight </button>
+        <button onClick="exploreEvent()"> Explore </button>
         <div class="dice">
             <img src="https://i.imgur.com/9j6T4H5.png" onClick=diceRoll() alt="">
         </div>

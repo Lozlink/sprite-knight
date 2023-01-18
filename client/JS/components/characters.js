@@ -35,7 +35,7 @@ function renderCharacter() {
             return `
             <div class="character" data-id='${character.id}'>
                 <div class="character-image">
-                    <img onClick="renderFight()" src="${character.image}" alt="">
+                    <img onClick="renderExplore()" src="${character.image}" alt="">
                     <p>Name: ${character.char_name}</p>
                     <p>Age: ${character.age}</p>
                     <p>Gender: ${character.gender}</p>
