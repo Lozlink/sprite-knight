@@ -6,13 +6,13 @@ const renderFight = () => {
     document.querySelector("#page").innerHTML = ` 
     <div class="fight-box">
         <div class="player-character">
-            <img src='#' alt="">
+            ${renderFightCharacter()}
         </div>
         <div class="dice">
             <img src="https://i.imgur.com/9j6T4H5.png" onClick=diceRoll() alt="">
         </div>
         <div class="monster">
-            <img src='#' alt="">
+            ${renderMonster()}
         </div>
 
     </div>
