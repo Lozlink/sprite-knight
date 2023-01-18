@@ -58,7 +58,7 @@ function renderFightCharacter() {
                 <div class="character-image">
                     <img o src="${character.image}" alt="">
                     <p>Name: ${character.char_name}</p>
-                    <p>Health: ${character.health}</p>
+                    <p>Health: <p class="player-health">${character.health}</p> </p>
                     <p>Level: ${character.level}</p>
                 </div>
             </div>
@@ -68,16 +68,17 @@ function renderFightCharacter() {
 }
 
 function deleteCharacter(event) {
-    const delCharButton = event.target
-    const CharDOM = delCharButton.closest('.character')
+    const delCharButton = event.target;
+    const CharDOM = delCharButton.closest(".character");
 
-    const characterId = CharDOM.dataset.id
+    const characterId = CharDOM.dataset.id;
 
     fetch(`/api/characters/${characterId}`, {
-        method: 'DELETE'
-    })
-    .then(() => {
-        state.characters = state.characters.filter(character => character.id != characterId)
-        renderCharacters()
-    })
+        method: "DELETE",
+    }).then(() => {
+        state.characters = state.characters.filter(
+            (character) => character.id != characterId
+        );
+        renderCharacters();
+    });
 }
