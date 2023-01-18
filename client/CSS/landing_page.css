@@ -1,3 +1,39 @@
-h1 {
+ul {
+    list-style-type: none;
+    width: 900px;
+    overflow: hidden;
+}
+
+li {
+    float: right;
+    color: white;
+    margin: 5px;
     font-family: 'VT323', monospace;
+}
+
+li a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: rgb(196, 222, 241);
+}
+
+body {
+    background-image: url("/images/LP_FusedBackground.png");
+    background-repeat: no-repeat;
+    background-size: 1010px;
+}
+
+.logo {
+    max-width: 150px;
+}
+
+footer {
+    font-family: 'VT323', monospace;
+    color: white;
+    margin: 600px 1px 1px 1px;
 }
