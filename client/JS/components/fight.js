@@ -42,7 +42,7 @@ const renderFight = () => {
 
 function diceRoll() {
     let playerAttack = rollDice() * 10;
-    let monsterAttack = 100 - playerAttack;
+    let monsterAttack = 70 - playerAttack;
     let playerHealth = document.querySelector(".player-health").innerHTML;
     let monsterHealth = document.querySelector(".monster-health").innerHTML;
     let fightMessage = document.querySelector(".fight-message").innerHTML;
@@ -57,6 +57,9 @@ function diceRoll() {
         document.querySelector(".player-health").innerHTML =
             playerHealth - monsterAttack;
     } else if (monsterHealth - playerAttack <= 0) {
+        document.querySelector(
+            ".fight-message"
+        ).innerHTML = `You dealt ${playerAttack} damage to the ${monsterName}! You've defeated the monster`
         fetch(`/api/characters/${state.characters[0].id}`, {
             method: "PUT",
             headers: {
@@ -65,10 +68,17 @@ function diceRoll() {
             // body: JSON.stringify()
         }).then(() => {
             state.characters[0].level += 1;
-            renderPlayerWins();
+            setTimeout(() => {
+                renderPlayerWins()
+            }, 2000);
         });
     } else if (playerHealth - monsterAttack <= 0) {
-        return renderMonsterWins();
+        document.querySelector(
+            ".fight-message"
+        ).innerHTML = `The ${monsterName} dealt a fatal blow with ${monsterAttack} damage.`
+        setTimeout(() => {
+            renderMonsterWins()
+        }, 2000);
     }
 }
 
@@ -78,10 +88,11 @@ function renderPlayerWins() {
     document.querySelector("#page").innerHTML = ` 
     <div class="fight-box">
         <div class="player-character">
-            <img src='#' alt="">
+        ${renderFightCharacter()}
         </div>
         <div class="continue">
         <h1>Player wins!</h1>
+        <h2> You have levelled up! </h2>
         <button onClick="renderFight()"> Fight Again </button>
         <button onClick="exploreEvent()"> Explore </button>
         </div>
@@ -94,7 +105,7 @@ function renderMonsterWins() {
     document.querySelector("#page").innerHTML = ` 
     <div class="fight-box">
         <div class="monster">
-            <img src='#' alt="">
+        ${renderMonster()}
         </div>
         <div class="continue">
         <h1> Monster wins!</h1>
