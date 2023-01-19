@@ -1,7 +1,7 @@
 function renderExplore() {
     // roll to decide following event
     document.querySelector("body").style.backgroundImage =
-        "url('https://i.imgur.com/MiaqKb2.png')";
+        "url('https://i.imgur.com/xjkv6oX.png')";
 
         
     function loadingMenu() {
@@ -52,10 +52,6 @@ function exploreEvent() {
                             <h2>${randEvent.event}</h2> 
                             <p>${randEvent.quote}</p>
                         </div>                    
-                        <div class="buttons-position">    
-                            <button onClick="renderFight()"> Fight </button>
-                            <button onClick="exploreEvent()"> Explore </button>
-                        </div>
                     </div>
                 `;
 
