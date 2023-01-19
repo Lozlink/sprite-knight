@@ -57,9 +57,17 @@ p {
     font-size: 1rem;
 }
 
-.fight-content .character-image {
+.fight-content .character-image, .fight-content .monster {
     background-color: rgba(0, 0, 0, 0.5);
     align-self: center;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: black 3px 3px 3px;
+}
+
+.fight-content .monster img {
+    border-radius: 20px;
+    box-shadow: black 3px 3px 3px;
 }
 
 /* .monster-details {

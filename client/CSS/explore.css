@@ -49,4 +49,8 @@ body {
     align-self: center;
 }
 
+.buttons-position button {
+    font-family: 'VT323', monospace;
+}
+
 /* explore-page, img-explore, explore-content could all be merged into this file and moved from landing-page.css if we wanted to be name specific */
