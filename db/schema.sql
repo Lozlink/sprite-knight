@@ -15,7 +15,7 @@ VALUES
 
 CREATE TABLE characters(
     id SERIAL PRIMARY KEY,
-    char_name TEXT,
+    char_name TEXT, 
     gender TEXT,
     age INTEGER,
     level INTEGER,
@@ -68,6 +68,6 @@ VALUES
 ('receive armor', 'You come across an old battlefield. Unmarked graves lay as far as the eye can see. One would find it hard to think of tomorrow while gazing at this sight. Near the stones, something catches your eye. A set of armor covered in dried blood, yet seemingly undamaged.', 'Receive armor', 'https://i.imgur.com/PnKetKO.png'),
 ('lose health', 'A sharp wooden spike penetrates the ground between your feet. You jump back in surprise, only to step back on another. Truly the luck of a champion', 'lose 30% health', 'https://i.imgur.com/mapSjsZ.png'),
 ('rest stop', 'An idyllic view that a weary adventurer like yourself thirsts for. A moment to recover and reflect  on the journey; past, present and future', 'recover full health', 'https://i.imgur.com/MiaqKb2.png'),
-('fight monster', 'You walk through a meadow, the sun''s rays shining through the trees. The flowers.. too many to count. You are too busy listening to the birds singing anyway.. Wait, why did they suddenly stop? You see them fly away quickly as you hear a deep growl behind you', 'https://i.imgur.com/mHuJ3wR.png');
+('momemnt of rest...?', 'You walk through a meadow, the sun''s rays shining through the trees. The flowers.. too many to count. You are too busy listening to the birds singing anyway.. Wait, why did they suddenly stop? You see them fly away quickly as you hear a deep growl behind you', 'fight monster', 'https://i.imgur.com/mHuJ3wR.png');
 
 

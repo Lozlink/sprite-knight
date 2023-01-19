@@ -17,30 +17,44 @@ function renderCharacterCreation() {
         </div>
         <div>
             <label>Gender:</label>
-            <select name="gender">
+            <select name="gender" onChange="selectGenderImage(event)">
                 <option value="male">Male</option>
                 <option value="female">Female</option>
                 <option value="other">Other</option>
             </select>
         </div>
-        <button>Create Character</button>
-    </form>
         <div class = "character-image">
-            <img src="https://i.imgur.com/fuMSF07.jpg" alt="">
+            <img src="https://i.imgur.com/fuMSF07.jpg" alt="" name="image">
         </div>
+        <button>Create Character</button>
+        <button onClick="renderCharacters()">Character List </button>
+    </form>
+        
     </div>
         
         `;
 }
+
+function selectGenderImage(event) {
+    const selection = event.target
+    const characterImage = document.querySelector('.character-image img')
+    if (selection.value === "male"){
+        characterImage.src = "https://i.imgur.com/fuMSF07.jpg"
+    } else {
+        characterImage.src = "https://i.imgur.com/CU8PkWAl.jpg"
+    }
+}
+
 
 // submits code to character db table
 function submitCharacter(event) {
     event.preventDefault();
     const form = event.target;
     let data = Object.fromEntries(new FormData(form));
+    console.log(data)
 
+    data.image = document.querySelector('.character-image img').src
     data.level = 1;
-    data.image = "https://i.imgur.com/fuMSF07.jpg";
     data.health = 100;
     data.userId = state.userId;
 
