@@ -1,0 +1,52 @@
+.character-creation {
+    display: flex;
+    justify-content: center;
+    font-family: 'VT323', monospace;
+}
+
+.character-creation button, .character-creation select {
+    font-family: 'VT323', monospace;
+}
+
+.character-creation .character-image {
+    display: flex;
+    justify-content: center;
+}
+
+.character-creation-box {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    box-shadow: black 3px 3px 3px;
+    padding: 30px;
+    color: white;
+}
+
+.character-creation-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.character-creation-box div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.character-creation-box input{
+    width: 50%;
+}
+
+.character-creation-box button {
+    width: fit-content;
+    padding: 5px 10px;
+    background-color: rgb(71, 245, 227);
+    margin-bottom: 10px;
+    align-self: center;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.character-creation-box button:hover {
+    cursor: pointer;
+    color: white;
+}
