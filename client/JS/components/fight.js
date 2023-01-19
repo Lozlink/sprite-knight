@@ -10,7 +10,7 @@ const renderFight = () => {
         </div>
         <div class="dice">
             <img src="https://i.imgur.com/9j6T4H5.png" onClick=diceRoll() alt="">
-            <p class="fight-message">Test<p>
+            <p class="fight-message"><p>
         </div>
         <div class="monster">
             ${renderMonster()}
@@ -20,69 +20,41 @@ const renderFight = () => {
     `;
 };
 
-// function diceRoll() {
-//     console.log(rollDice());
-//     if (rollDice() > 3) {
-//         console.log(state.characters);
-//         console.log(state.id);
-//         fetch(`/api/characters/${state.characters[0].id}`, {
-//             method: "PUT",
-//             headers: {
-//                 "Content-Type": "application/json",
-//             },
-//             // body: JSON.stringify()
-//         }).then(() => {
-//             state.characters[0].level += 1;
-//             renderPlayerWins();
-//         });
-//     } else {
-//         return renderMonsterWins();
-//     }
-// }
-
 function diceRoll() {
     let playerAttack = rollDice() * 10;
     let monsterAttack = 70 - playerAttack;
-    let playerHealth = document.querySelector(".player-health").innerHTML;
-    let monsterHealth = document.querySelector(".monster-health").innerHTML;
-    let fightMessage = document.querySelector(".fight-message").innerHTML;
-    const monsterName = document.querySelector(".monster-name").innerHTML;
+    let playerHealth = document.querySelector(".player-health");
+    let monsterHealth = document.querySelector(".monster-health");
+    let fightMessage = document.querySelector(".fight-message");
+    const monsterName = document.querySelector(".monster-name");
     // checks if player attack kills monster - if true - player renderPlayerWins and level up
-    if (monsterHealth - playerAttack > 0 && playerHealth - monsterAttack > 0) {
-        document.querySelector(
-            ".fight-message"
-        ).innerHTML = `You dealt ${playerAttack} damage to the ${monsterName}! The ${monsterName} swung back and did ${monsterAttack} damage to you.<br> Roll again to keep fighting`;
-        document.querySelector(".monster-health").innerHTML =
-            monsterHealth - playerAttack;
-        document.querySelector(".player-health").innerHTML =
-            playerHealth - monsterAttack;
-    } else if (monsterHealth - playerAttack <= 0) {
-        document.querySelector(
-            ".fight-message"
-        ).innerHTML = `You dealt ${playerAttack} damage to the ${monsterName}! You've defeated the monster`
+    if (
+        monsterHealth.innerHTML - playerAttack > 0 &&
+        playerHealth.innerHTML - monsterAttack > 0
+    ) {
+        fightMessage.innerHTML = `You dealt ${playerAttack} damage to the ${monsterName.innerHTML}! The ${monsterName.innerHTML} swung back and did ${monsterAttack} damage to you.<br> Roll again to keep fighting`;
+        monsterHealth.innerHTML = monsterHealth.innerHTML - playerAttack;
+        playerHealth.innerHTML = playerHealth.innerHTML - monsterAttack;
+    } else if (monsterHealth.innerHTML - playerAttack <= 0) {
+        fightMessage.innerHTML = `You dealt ${playerAttack} damage to the ${monsterName.innerHTML}! You've defeated the monster`;
         fetch(`/api/characters/${state.characters[0].id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
             },
-            // body: JSON.stringify()
         }).then(() => {
             state.characters[0].level += 1;
             setTimeout(() => {
-                renderPlayerWins()
+                renderPlayerWins();
             }, 2000);
         });
     } else if (playerHealth - monsterAttack <= 0) {
-        document.querySelector(
-            ".fight-message"
-        ).innerHTML = `The ${monsterName} dealt a fatal blow with ${monsterAttack} damage.`
+        fightMessage.innerHTML = `The ${monsterName.innerHTML} dealt a fatal blow with ${monsterAttack} damage.`;
         setTimeout(() => {
-            renderMonsterWins()
+            renderMonsterWins();
         }, 2000);
     }
 }
-
-function renderHealth() {}
 
 function renderPlayerWins() {
     document.querySelector("#page").innerHTML = ` 
@@ -118,4 +90,3 @@ function renderMonsterWins() {
 }
 
 // module.exports = renderFight;
-
