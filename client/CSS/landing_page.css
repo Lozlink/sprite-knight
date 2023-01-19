@@ -60,4 +60,6 @@ footer {
     font-family: 'VT323', monospace;
     color: white;
     margin: 153px 0px 0px 300px;
+    position: fixed;
+    bottom: 2%;
 }
