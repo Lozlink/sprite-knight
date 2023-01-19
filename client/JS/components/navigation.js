@@ -3,7 +3,7 @@ function renderNav() {
     if (state.loggedInUserName) {
         document.querySelector(".header-nav").innerHTML = `
             <ul>
-                <li style="float:left"><img class="logo" src="./images/SK_Logo_LightFont.png" alt=""></li>
+                <li style="float:left"><img class="logo" onClick="renderCharacters()" src="./images/SK_Logo_LightFont.png" alt=""></li>
                 <li class='logout' onClick="logout()">Log Out</li>
             </ul>
         `;

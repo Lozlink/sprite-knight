@@ -61,6 +61,7 @@ function selectCharacter(event) {
     const CharDOM = selectCharImage.closest(".character");
     const characterId = CharDOM.dataset.id;
     state.selectedCharacter = state.characters.filter((character) => character.id == characterId)[0]
+    document.querySelector('#page').innerHTML = '';
     renderExplore()
 //     fetch(`/api/characters/${characterId}`)
 //     .then(res => res.json())

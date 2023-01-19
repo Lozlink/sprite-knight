@@ -1,16 +1,22 @@
 function renderExplore() {
     // roll to decide following event
+    document.querySelector('#page').classList = 'page';
+    document.querySelector('#page').classList.add('fight-or-explore-page');
+
     document.querySelector("body").style.backgroundImage =
         "url('https://i.imgur.com/xjkv6oX.png')";
 
         
     function loadingMenu() {
         document.querySelector("body").style.backgroundImage = ""
+        
         return document.querySelector("#page").innerHTML = `
-        <button onClick="renderFight()"> Fight </button>
-        <button onClick="exploreEvent()"> Explore </button>
-    `
-    
+            <h2>Do you want to fight or explore?</h2>
+            <div class="choices">
+                <button onClick="renderFight()"> Fight </button>
+                <button onClick="exploreEvent()"> Explore </button>
+            </div>
+        `;    
     }
     ;
     

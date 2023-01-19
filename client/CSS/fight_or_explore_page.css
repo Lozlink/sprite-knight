@@ -1,0 +1,25 @@
+.fight-or-explore-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.fight-or-explore-page h2 {
+    margin: 20px 0 0 0;
+}
+
+.choices {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.choices button {
+    padding: 5px 10px;
+    font-family: 'VT323', monospace;
+}
