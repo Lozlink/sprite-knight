@@ -39,4 +39,10 @@ router.get('/', (req, res) => {
         });
 });
 
+// Log the user out by deleting the session
+router.delete('/', (req, res) => {
+    req.session.userId = null;
+    res.json({ message: 'User successfully logged out.' });
+});
+
 module.exports = router;
