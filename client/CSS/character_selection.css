@@ -33,7 +33,7 @@ body {
     border-radius: 20px;
 }
 
-.character-image img:hover {
+.characters-list .character-image img:hover {
     cursor: pointer;
     border-color: white;
     animation: bounce 1s infinite;
