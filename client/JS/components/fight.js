@@ -18,9 +18,15 @@ const renderFight = () => {
 
     </div>
     `;
+    const beastRoar = new Audio("../audio/beastRoar.mp3");
+    beastRoar.volume = 0.05;
+    beastRoar.play();
 };
 
 function diceRoll() {
+    const swordSwoosh = new Audio("../audio/Sword Swoosh.mp3");
+    swordSwoosh.volume = 0.1;
+    swordSwoosh.play();
     let playerAttack = rollDice() * 10;
     let monsterAttack = 70 - playerAttack;
     let playerHealth = document.querySelector(".player-health");
@@ -37,6 +43,9 @@ function diceRoll() {
         playerHealth.innerHTML = playerHealth.innerHTML - monsterAttack;
     } else if (monsterHealth.innerHTML - playerAttack <= 0) {
         fightMessage.innerHTML = `You dealt ${playerAttack} damage to the ${monsterName.innerHTML}! You've defeated the monster`;
+        const death = new Audio("../audio/death.mp3");
+        death.volume = 0.1;
+        death.play();
         fetch(`/api/characters/${state.characters[0].id}`, {
             method: "PUT",
             headers: {
@@ -50,6 +59,8 @@ function diceRoll() {
         });
     } else if (playerHealth - monsterAttack <= 0) {
         fightMessage.innerHTML = `The ${monsterName.innerHTML} dealt a fatal blow with ${monsterAttack} damage.`;
+        death.volume = 0.1;
+        death.play();
         setTimeout(() => {
             renderMonsterWins();
         }, 2000);
