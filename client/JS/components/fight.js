@@ -119,4 +119,3 @@ function renderMonsterWins() {
 
 // module.exports = renderFight;
 
-// randomized person winning bug
