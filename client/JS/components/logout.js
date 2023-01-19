@@ -7,12 +7,17 @@ function logoutBtn() {
 }
 
 function logout() {
-    state.loggedInUserName = null;
-    state.userId = null;
-    state.characters = [];
+    fetch('/api/sessions', {
+        method: 'DELETE'
+    })
+        .then(() => {
+            state.loggedInUserName = null;
+            state.userId = null;
+            state.characters = [];
 
-    // Update nav bar to remove Logout since the user is now logged out.
-    renderNav();
-    renderLogin();
+            // Update nav bar to remove Logout since the user is now logged out.
+            renderNav();
+            renderLogin();
+        });    
 }
 
