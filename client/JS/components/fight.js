@@ -28,7 +28,7 @@ function diceRoll() {
     swordSwoosh.volume = 0.1;
     swordSwoosh.play();
     let playerAttack = rollDice() * 10;
-    let monsterAttack = 70 - playerAttack;
+    let monsterAttack = 150 - playerAttack;
     let playerHealth = document.querySelector(".player-health");
     let monsterHealth = document.querySelector(".monster-health");
     let fightMessage = document.querySelector(".fight-message");
@@ -56,9 +56,11 @@ function diceRoll() {
             setTimeout(() => {
                 renderPlayerWins();
             }, 2000);
+            
         });
-    } else if (playerHealth - monsterAttack <= 0) {
+    } else if (playerHealth.innerHTML - monsterAttack < 0) {
         fightMessage.innerHTML = `The ${monsterName.innerHTML} dealt a fatal blow with ${monsterAttack} damage.`;
+        const death = new Audio("../audio/death.mp3");
         death.volume = 0.1;
         death.play();
         setTimeout(() => {
@@ -88,7 +90,7 @@ function renderMonsterWins() {
     document.querySelector("#page").innerHTML = ` 
     <div class="fight-box">
         <div class="monster">
-        ${renderMonster()}
+        <img src=${state.battleMonster.image}>
         </div>
         <div class="continue">
         <h1> Monster wins!</h1>

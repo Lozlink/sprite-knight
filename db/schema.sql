@@ -64,10 +64,10 @@ CREATE TABLE events(
 
 INSERT INTO events(event, quote, effect, image)
 VALUES 
-('recieve food', 'You come across an orchard lush with Apples. A moment''s respite in an otherwise treacherous world. Savour it for moments like this do not last', 'Restore health by 50%', 'https://i.imgur.com/CrIWojm.png'),
-('receive armor', 'You come across a battlefield of old. Graves lay as far as the eye can see. You dredge the past as it may come to be the future. At your feet, a set of armor that seems untouched catches your eye.', 'Receive armor', 'https://i.imgur.com/PnKetKO.png'),
-('lose health', 'A sharp wooden spike penetrates your feet. You jump back in surprise, only to step back on another. Truly the luck of a champion', 'lose 30% health', 'https://i.imgur.com/mapSjsZ.png'),
-('rest stop', 'An idyllic view that a champion like yourself should not be privy to seeing. A moment to recover and reflect  on the journey; past, present and future', 'recover full health', 'https://i.imgur.com/MiaqKb2.png'),
-('fight monster', 'You come across a meadow with Sun rays shining through the trees. Flowers bloom on the plants around you, and birds chirp nested on the trees. Suddenly, you feel a sharp tug and a growl.', 'Fight Monster', 'https://i.imgur.com/mHuJ3wR.png');
+('recieve food', 'You find yourself in a quiet orchard. Bright green trees fill up your view, apples such a deep red, they are almost begging to be stolen. A moment''s respite in an otherwise treacherous world. Savour it, for moments like this do not last', 'Restore health by 50%', 'https://i.imgur.com/CrIWojm.png'),
+('receive armor', 'You come across an old battlefield. Unmarked graves lay as far as the eye can see. One would find it hard to think of tomorrow while gazing at this sight. Near the stones, something catches your eye. A set of armor covered in dried blood, yet seemingly undamaged.', 'Receive armor', 'https://i.imgur.com/PnKetKO.png'),
+('lose health', 'A sharp wooden spike penetrates the ground between your feet. You jump back in surprise, only to step back on another. Truly the luck of a champion', 'lose 30% health', 'https://i.imgur.com/mapSjsZ.png'),
+('rest stop', 'An idyllic view that a weary adventurer like yourself thirsts for. A moment to recover and reflect  on the journey; past, present and future', 'recover full health', 'https://i.imgur.com/MiaqKb2.png'),
+('fight monster', 'You walk through a meadow, the sun''s rays shining through the trees. The flowers.. too many to count. You are too busy listening to the birds singing anyway.. Wait, why did they suddenly stop? You see them fly away quickly as you hear a deep growl behind you', 'https://i.imgur.com/mHuJ3wR.png');
 
 
