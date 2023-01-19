@@ -9,13 +9,18 @@ function renderCharacters() {
         .then((res) => res.json())
         .then((characters) => {
             state.characters = characters;
+
+            document.querySelector('#page').className = 'page';
+            document.querySelector('#page').classList.add('character-selection');
+
             document.querySelector("#page").innerHTML = `
-                <h2>Available Characters</h2>
-                <h3>Click a character to begin</h3>
+                <div class="char-select-header">
+                    <h3>Select a character to begin</h3>
+                    <button class="create-char-btn" onClick="renderCharacterCreation()">Create a new character</button>
+                </div>
                 <div class="characters-list">
                     ${renderCharacter()}
                 </div>
-                <button onClick="renderCharacterCreation()">Create a new Character? </button>
             `;
 
             // Remove the sign-up and login buttons
@@ -32,20 +37,20 @@ function renderCharacter() {
     return state.characters
         .map((character) => {
             return `
-            <div class="character" data-id='${character.id}'>
-                <div class="character-image">
-                    <img onClick="selectCharacter(event)" src="${character.image}" alt="">
-                    <p>Name: ${character.char_name}</p>
-                    <p>Age: ${character.age}</p>
-                    <p>Gender: ${character.gender}</p>
-                    <p>Health: ${character.health}</p>
-                    <p>Level: ${character.level}</p>
+                <div class="character" data-id='${character.id}'>
+                    <div class="character-image">
+                        <img onClick="selectCharacter(event)" src="${character.image}" alt="">
+                        <div class="char-details">
+                            <p>Name: ${character.char_name}</p>
+                            <p>Age: ${character.age}</p>
+                            <p>Gender: ${character.gender}</p>
+                            <p>Health: ${character.health}</p>
+                            <p>Level: ${character.level}</p>
+                        </div>
+                    </div>
+                    <button class="delete-char-btn" onClick="deleteCharacter(event)">Delete</button>                
                 </div>
-                <button onClick="deleteCharacter(event)">Delete Character?</button>
-                
-            </div>
-        `;
-        
+            `;        
         })
         .join(""); 
         
