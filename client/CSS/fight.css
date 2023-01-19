@@ -57,7 +57,7 @@ p {
     font-size: 1rem;
 }
 
-.character-image {
+.fight-content .character-image {
     background-color: rgba(0, 0, 0, 0.5);
     align-self: center;
 }
