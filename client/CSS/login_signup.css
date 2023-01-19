@@ -16,6 +16,7 @@
     flex-direction: column;
     gap: 0.5rem;
     box-shadow: black 3px 3px 3px;
+    font-family: 'VT323', monospace;
 }
 
 .login button, .sign-up button {
@@ -23,6 +24,7 @@
     width: fit-content;
     padding: 0.5rem;
     align-self: center;
+    font-family: 'VT323', monospace;
 }
 
 .login h2, .sign-up h2 {
