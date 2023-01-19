@@ -1,0 +1,18 @@
+.character-creation {
+    display: flex;
+    justify-content: center;
+    font-family: 'VT323', monospace;
+}
+
+.character-creation button, .character-creation select {
+    font-family: 'VT323', monospace;
+}
+
+.character-image {
+    display: flex;
+    justify-content: center;
+}
+
+.character-creation-box {
+    
+}

@@ -1,5 +1,8 @@
 // render the character creation section:
 function renderCharacterCreation() {
+    document.querySelector('#page').classList = 'page';
+    document.querySelector('#page').classList.add('character-creation');
+    
     document.querySelector("#page").innerHTML = `
     <div class="character-creation-box">
 
