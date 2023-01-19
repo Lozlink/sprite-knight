@@ -4,9 +4,9 @@ function rollDice() {
 
 const renderFight = () => {
     // reset class list
-    document.querySelector('#page').classList = 'page';
+    document.querySelector("#page").classList = "page";
     // add fight page
-    document.querySelector('#page').classList.add('fight-page');
+    document.querySelector("#page").classList.add("fight-page");
     document.querySelector("#page").innerHTML = ` 
     <img class="img-fight" src="https://i.imgur.com/Akqa9FU.png">
     
@@ -35,7 +35,6 @@ const renderFight = () => {
     beastRoar.volume = 0.05;
     beastRoar.play();
 };
-
 
 function diceRoll() {
     const swordSwoosh = new Audio("../audio/Sword Swoosh.mp3");
@@ -70,7 +69,6 @@ function diceRoll() {
             setTimeout(() => {
                 renderPlayerWins();
             }, 2000);
-            
         });
     } else if (playerHealth.innerHTML - monsterAttack < 0) {
         fightMessage.innerHTML = `The ${monsterName.innerHTML} dealt a fatal blow with ${monsterAttack} damage.`;
@@ -85,16 +83,18 @@ function diceRoll() {
 
 function renderPlayerWins() {
     document.querySelector("#page").innerHTML = ` 
-    <div class="fight-box">
-        <div class="player-character">
-        ${renderFightCharacter()}
-        </div>
-        <div class="continue">
-        <h1>Player wins!</h1>
-        <h2> You have levelled up! </h2>
-        <button onClick="renderFight()"> Fight Again </button>
-        <button onClick="exploreEvent()"> Explore </button>
-        </div>
+        <div class="player-win-box">
+
+            <div class="player-character">
+                ${renderFightCharacter()}
+            </div>
+
+            <div class="continue">
+                <h1>Player wins!</h1>
+                <h2> You have leveled up! </h2>
+                <button onClick="renderFight()"> Fight Again </button>
+                <button onClick="exploreEvent()"> Explore </button>
+            </div>
 
     </div>
     `;
@@ -102,14 +102,14 @@ function renderPlayerWins() {
 
 function renderMonsterWins() {
     document.querySelector("#page").innerHTML = ` 
-    <div class="fight-box">
+    <div class="monster-win-box">
         <div class="monster">
-        <img src=${state.battleMonster.image}>
+            <img src=${state.battleMonster.image}>
         </div>
         <div class="continue">
-        <h1> Monster wins!</h1>
-        <button onClick="renderFight()"> Fight Again</button>
-        <button onClick="exploreEvent()"> Explore </button>
+            <h1> Monster wins!</h1>
+            <button onClick="renderFight()"> Fight Again</button>
+            <button onClick="exploreEvent()"> Explore </button>
         </div>
 
     </div>

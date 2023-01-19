@@ -20,6 +20,11 @@
     justify-content: space-evenly;
 }
 
+.fight-message {
+    width: 470px;
+    height: 50px;
+}
+
 .img-fight {
     z-index: 1;
     width: 750px;
@@ -70,7 +75,40 @@ p {
     box-shadow: black 3px 3px 3px;
 }
 
-/* .monster-details {
+
+.player-win-box{
+    gap: 30px;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.monster-win-box {
+    gap: 30px;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.continue {
+    border-radius: 20px;
+    box-shadow: black 3px 3px 3px;
     background-color: rgba(0, 0, 0, 0.5);
-    align-self: center;
-} */
+    align-items: center;
+    padding: 10px;
+    height: 244px;
+}
+
+.monster img {
+    border-radius: 20px;
+    height: 244px;
+}
+
+.monster, .character {
+    height: 400px
+}
+
+.player-win-box p {
+    color: transparent;
+}
+
