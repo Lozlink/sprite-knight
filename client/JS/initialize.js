@@ -2,7 +2,7 @@ const state = {
     loggedInUserName: null,
     userId: null,
     characters: [],
-    selectedCharacters: []
+    selectedCharacter: null
 };  
   
 fetch('/api/sessions')

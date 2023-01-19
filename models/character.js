@@ -38,6 +38,7 @@ const Character = {
         return db.query(sql, [characterId])
         .then(dbRes => dbRes.rows[0])
     }
+
 };
 
 
