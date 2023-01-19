@@ -14,6 +14,8 @@ router.get("/:id", (req, res) => {
         .then((characters) => res.json(characters));
 });
 
+
+
 router.post("/", (req, res) => {
     const { char_name, gender, age, level, userId, health, image } = req.body;
 

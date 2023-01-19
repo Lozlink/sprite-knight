@@ -9,7 +9,6 @@ function renderCharacters() {
         .then((res) => res.json())
         .then((characters) => {
             state.characters = characters;
-
             document.querySelector("#page").innerHTML = `
                 <h2>Available Characters</h2>
                 <h3>Click a character to begin</h3>
@@ -35,7 +34,7 @@ function renderCharacter() {
             return `
             <div class="character" data-id='${character.id}'>
                 <div class="character-image">
-                    <img onClick="renderExplore()" src="${character.image}" alt="">
+                    <img onClick="selectCharacter(event)" src="${character.image}" alt="">
                     <p>Name: ${character.char_name}</p>
                     <p>Age: ${character.age}</p>
                     <p>Gender: ${character.gender}</p>
@@ -46,26 +45,40 @@ function renderCharacter() {
                 
             </div>
         `;
+        
         })
-        .join("");
+        .join(""); 
+        
 }
 
+function selectCharacter(event) {
+    const selectCharImage = event.target
+    const CharDOM = selectCharImage.closest(".character");
+    const characterId = CharDOM.dataset.id;
+    state.selectedCharacter = state.characters.filter((character) => character.id == characterId)[0]
+    renderExplore()
+//     fetch(`/api/characters/${characterId}`)
+//     .then(res => res.json())
+//     .then(character => {
+//         selectedCharacter = character
+//     })
+ }
+
 function renderFightCharacter() {
-    return state.characters
-        .map((character) => {
             return `
             <div class="character" >
                 <div class="character-image">
-                    <img o src="${character.image}" alt="">
-                    <p>Name: ${character.char_name}</p>
-                    <p>Health: <p class="player-health">${character.health}</p> </p>
-                    <p>Level: ${character.level}</p>
+                    <img o src="${state.selectedCharacter.image}" alt="">
+                    <p>Name: ${state.selectedCharacter.char_name}</p>
+                    <p>Health: <p class="player-health">${state.selectedCharacter.health}</p> </p>
+                    <p>Level: ${state.selectedCharacter.level}</p>
                 </div>
             </div>
         `;
-        })
-        .join("");
-}
+    }
+        
+        
+
 
 function deleteCharacter(event) {
     const delCharButton = event.target;
