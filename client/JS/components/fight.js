@@ -3,25 +3,39 @@ function rollDice() {
 }
 
 const renderFight = () => {
+    // reset class list
+    document.querySelector('#page').classList = 'page';
+    // add fight page
+    document.querySelector('#page').classList.add('fight-page');
     document.querySelector("#page").innerHTML = ` 
-    <div class="fight-box">
-        <div class="player-character">
-            ${renderFightCharacter()}
-        </div>
-        <div class="dice">
-            <img class="img-monster" src="https://i.imgur.com/9j6T4H5.png" onClick=diceRoll() alt="">
-            <p class="fight-message"><p>
-        </div>
-        <div class="monster">
-            ${renderMonster()}
+    <img class="img-fight" src="https://i.imgur.com/Akqa9FU.png">
+    
+    <div class="fight-content">
+        <div class="fight-box">
+            <div class="player-character">
+                ${renderFightCharacter()}
+            </div>
+
+            <div class="dice">
+                <img class="img-monster" src="https://i.imgur.com/9j6T4H5.png" onClick=diceRoll() alt="">
+            </div>
+
+            <div class="monster">
+                ${renderMonster()}
+            </div>
+             
         </div>
 
+        <div class="text-fight">
+            <p class="fight-message"><p>
+        </div>   
     </div>
     `;
     const beastRoar = new Audio("../audio/beastRoar.mp3");
     beastRoar.volume = 0.05;
     beastRoar.play();
 };
+
 
 function diceRoll() {
     const swordSwoosh = new Audio("../audio/Sword Swoosh.mp3");

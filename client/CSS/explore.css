@@ -4,11 +4,18 @@ body {
     justify-content: space-around;
 }
 
+.explore-page {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+}
+
 .img-explore {
     z-index: 1;
     width: 750px;
     height: 750px;
     border: 10px solid black;
+    align-self: center;
 }
 
 /* #page {
@@ -25,11 +32,12 @@ body {
     flex-direction: column;
     position: relative;
     bottom: 250px;
+    align-self: center;
 }
 
 .text-explore {
     width: 500px;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     background-color: rgba(0, 0, 0, 0.3);
     font-family: 'VT323', monospace;
     color: white;
@@ -40,3 +48,5 @@ body {
 .buttons-position {
     align-self: center;
 }
+
+/* explore-page, img-explore, explore-content could all be merged into this file and moved from landing-page.css if we wanted to be name specific */
