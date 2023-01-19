@@ -30,7 +30,7 @@ function exploreEvent() {
     fetch("/api/events")
         .then((res) => res.json())
         .then((randEvent) => {
-            if (randEvent.event != "fight monster") {
+            if (randEvent.effect != "fight monster") {
                 document.querySelector('#page').classList.add('explore-page');
 
                 document.querySelector("#page").innerHTML = `

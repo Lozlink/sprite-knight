@@ -42,7 +42,7 @@ function diceRoll() {
     swordSwoosh.volume = 0.1;
     swordSwoosh.play();
     let playerAttack = rollDice() * 10;
-    let monsterAttack = 150 - playerAttack;
+    let monsterAttack = 100 - playerAttack;
     let playerHealth = document.querySelector(".player-health");
     let monsterHealth = document.querySelector(".monster-health");
     let fightMessage = document.querySelector(".fight-message");
