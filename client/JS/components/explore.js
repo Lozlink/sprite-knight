@@ -1,7 +1,7 @@
 function renderExplore() {
     // roll to decide following event
-    // document.querySelector("body").style.backgroundImage =
-    //     "url('https://i.imgur.com/MiaqKb2.png')";
+    document.querySelector("body").style.backgroundImage =
+        "url('https://i.imgur.com/MiaqKb2.png')";
 
         
     function loadingMenu() {
