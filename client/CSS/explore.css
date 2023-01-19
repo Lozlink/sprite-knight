@@ -22,17 +22,21 @@ body {
     display: flex;
     z-index: 2;
     justify-content: space-around;
+    flex-direction: column;
+    position: relative;
+    bottom: 250px;
 }
 
 .text-explore {
     width: 500px;
     font-size: 1.25rem;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.3);
     font-family: 'VT323', monospace;
     color: white;
+    padding: 1rem;
+    border-radius: 20px;
 }
 
 .buttons-position {
-    margin: 1px 1px 1px 900px;
-    /* text-align: center; */
+    align-self: center;
 }

@@ -67,7 +67,18 @@ footer {
     position: fixed;
     bottom: 2%;
 }
-/* 
-#page {
+
+.all {
     display: flex;
-} */
+    flex-direction: column;
+}
+
+.explore-page {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.img-explore, .explore-content {
+    align-self: center;
+}

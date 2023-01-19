@@ -25,6 +25,10 @@ function exploreEvent() {
         .then((res) => res.json())
         .then((randEvent) => {
             if (randEvent.event != "fight monster") {
+                document.querySelector('#page').classList.add('explore-page');
+
+                document.querySelector('#page').classList = 'page';
+
                 document.querySelector("#page").innerHTML = `
                     
                     
@@ -44,7 +48,29 @@ function exploreEvent() {
                 </div>
                 `;
             } else {
-                renderFight();
+                document.querySelector('#page').classList.add('explore-page');
+
+                document.querySelector('#page').classList = 'page';
+
+                document.querySelector("#page").innerHTML = `
+                    
+                    
+                    <img class="img-explore" src=${randEvent.image}>
+
+                <div class="explore-content">
+                    
+                        <div class="text-explore">
+                            <h2>${randEvent.event}</h2> 
+                            <p>${randEvent.quote}</p>
+                        </div>
+                    
+                        <div class="buttons-position">    
+                            <button onClick="renderFight()"> Fight </button>
+                            <button onClick="exploreEvent()"> Explore </button>
+                        </div>
+                </div>`
+                
+                setTimeout(renderFight, 10000);
             }
         });
 }
