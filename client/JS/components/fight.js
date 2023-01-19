@@ -9,7 +9,7 @@ const renderFight = () => {
             ${renderFightCharacter()}
         </div>
         <div class="dice">
-            <img src="https://i.imgur.com/9j6T4H5.png" onClick=diceRoll() alt="">
+            <img class="img-monster" src="https://i.imgur.com/9j6T4H5.png" onClick=diceRoll() alt="">
             <p class="fight-message"><p>
         </div>
         <div class="monster">

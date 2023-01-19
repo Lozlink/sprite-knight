@@ -20,6 +20,7 @@ ul {
 li:hover {
     background-color: rgb(166, 228, 228);
     color: rgb(46, 134, 51);
+    cursor: pointer;
 }
 
 li {
@@ -42,6 +43,9 @@ body {
     background-size: 1400px;
     background-position: center top;
     background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .slogan-lp {
@@ -63,3 +67,7 @@ footer {
     position: fixed;
     bottom: 2%;
 }
+/* 
+#page {
+    display: flex;
+} */
