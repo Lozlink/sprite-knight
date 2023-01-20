@@ -43,6 +43,8 @@ function signUp(event) {
             if (res.error) {
                 renderSignUp();
                 renderError(res.error);
+                document.querySelector('#page').classList = 'page';
+                document.querySelector('#page').classList.add('error');
             } else {
                 state.loggedInUserName = res.email;
                 state.userId = res.id;

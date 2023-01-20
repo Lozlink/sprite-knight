@@ -42,6 +42,8 @@ function login(event) {
             if (res.error) {
                 renderLogin();
                 renderError(res.error);
+                document.querySelector('#page').classList = 'page';
+                document.querySelector('#page').classList.add('error');
             } else {
                 state.loggedInUserName = res.email;
                 state.userId = res.id;
