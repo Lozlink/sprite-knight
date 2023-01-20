@@ -38,3 +38,7 @@
 .login input, .sign-up input {
     margin-bottom: 0.25rem;
 }
+
+.error h2 {
+    text-align: center;
+}

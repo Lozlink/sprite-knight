@@ -1,5 +1,10 @@
 // Show the sign-up screen
 function renderSignUp() {
+    // Remove the slogan
+    if (document.querySelector('.slogan-lp')) {
+        document.querySelector('.slogan-lp').remove();
+    }
+
     document.querySelector('#page').innerHTML = `
         <section class='sign-up'>
         <form onSubmit="signUp(event)">
@@ -38,6 +43,8 @@ function signUp(event) {
             if (res.error) {
                 renderSignUp();
                 renderError(res.error);
+                document.querySelector('#page').classList = 'page';
+                document.querySelector('#page').classList.add('error');
             } else {
                 state.loggedInUserName = res.email;
                 state.userId = res.id;

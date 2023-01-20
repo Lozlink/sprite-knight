@@ -1,5 +1,10 @@
 // Show the log-in screen
 function renderLogin() {
+    // Remove the slogan
+    if (document.querySelector('.slogan-lp')) {
+        document.querySelector('.slogan-lp').remove();
+    }
+
     document.querySelector("#page").innerHTML = `
         <section class='login'>
             <form onSubmit="login(event)">
@@ -37,6 +42,8 @@ function login(event) {
             if (res.error) {
                 renderLogin();
                 renderError(res.error);
+                document.querySelector('#page').classList = 'page';
+                document.querySelector('#page').classList.add('error');
             } else {
                 state.loggedInUserName = res.email;
                 state.userId = res.id;

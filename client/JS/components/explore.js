@@ -1,5 +1,9 @@
 function renderExplore() {
-    // roll to decide following event
+    // Remove the slogan
+    if (document.querySelector('.slogan-lp')) {
+        document.querySelector('.slogan-lp').remove();
+    }
+    
     document.querySelector('#page').classList = 'page';
     document.querySelector('#page').classList.add('fight-or-explore-page');
 

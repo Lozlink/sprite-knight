@@ -11,8 +11,10 @@ function renderNav() {
         document.querySelector(".header-nav").innerHTML = `
             <ul>
                 <li style="float:left"><img class="logo" src="./images/SK_Logo_LightFont.png" alt=""></li>
-                <li class='sign-up' onClick="renderSignUp()">Sign Up</li>
-                <li class='login' onClick="renderLogin()">Log In</li>
+                <nav class="links">
+                    <li class='sign-up' onClick="renderSignUp()">Sign Up</li>
+                    <li class='login' onClick="renderLogin()">Log In</li>
+                </nav>
             </ul>
         `;
     }
