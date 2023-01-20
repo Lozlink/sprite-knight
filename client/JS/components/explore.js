@@ -1,14 +1,16 @@
 function renderExplore() {
-    // Remove the slogan
-    if (document.querySelector('.slogan-lp')) {
-        document.querySelector('.slogan-lp').remove();
-    }
-    
+    // roll to decide following event
     document.querySelector('#page').classList = 'page';
     document.querySelector('#page').classList.add('fight-or-explore-page');
 
     document.querySelector("body").style.backgroundImage =
         "url('https://i.imgur.com/xjkv6oX.png')";
+    
+    document.querySelector('#page').innerHTML = `
+    <h2 class="loading-screen"> Please wait to be loaded into Eerahk</h2> 
+    
+    `
+    
 
         
     function loadingMenu() {

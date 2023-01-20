@@ -5,7 +5,7 @@ function renderCharacterCreation() {
     
     document.querySelector("#page").innerHTML = `
     <div class="character-creation-box">
-
+    <button class="return" onClick="renderCharacters()">Character List </button>
     <form onSubmit="submitCharacter(event)" id="create-character-form">
         <div>
             <label>Name: </label>
@@ -27,7 +27,7 @@ function renderCharacterCreation() {
             <img src="https://i.imgur.com/fuMSF07.jpg" alt="" name="image">
         </div>
         <button>Create Character</button>
-        <button onClick="renderCharacters()">Character List </button>
+        
     </form>
         
     </div>
