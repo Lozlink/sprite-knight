@@ -9,6 +9,12 @@ function renderExplore() {
 
     document.querySelector("body").style.backgroundImage =
         "url('https://i.imgur.com/xjkv6oX.png')";
+    
+    document.querySelector('#page').innerHTML = `
+    <h2 class="loading-screen"> PLEASE WAIT TO BE LOADED INTO ROSHAR </h2> 
+    
+    `
+    
 
         
     function loadingMenu() {
