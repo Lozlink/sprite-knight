@@ -1,5 +1,10 @@
 // Show the log-in screen
 function renderLogin() {
+    // Remove the slogan
+    if (document.querySelector('.slogan-lp')) {
+        document.querySelector('.slogan-lp').remove();
+    }
+
     document.querySelector("#page").innerHTML = `
         <section class='login'>
             <form onSubmit="login(event)">

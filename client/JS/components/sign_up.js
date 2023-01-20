@@ -1,5 +1,10 @@
 // Show the sign-up screen
 function renderSignUp() {
+    // Remove the slogan
+    if (document.querySelector('.slogan-lp')) {
+        document.querySelector('.slogan-lp').remove();
+    }
+
     document.querySelector('#page').innerHTML = `
         <section class='sign-up'>
         <form onSubmit="signUp(event)">
