@@ -5,6 +5,11 @@ function getCharacters() {
 }
 
 function renderCharacters() {
+    // Remove the slogan
+    if (document.querySelector('.slogan-lp')) {
+        document.querySelector('.slogan-lp').remove();
+    }
+    
     fetch(`/api/characters/${state.userId}`)
         .then((res) => res.json())
         .then((characters) => {
