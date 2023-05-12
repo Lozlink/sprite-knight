@@ -16,7 +16,7 @@ const monstersController = require("./controllers/monsters_controller");
 const app = express();
 
 // Initialize the port
-const port = 3000;
+const port = 3001;
 
 // Start the web server
 app.listen(port, () => console.log(`listening on port ${port}`));
